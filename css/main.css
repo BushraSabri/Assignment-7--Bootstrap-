@@ -1,0 +1,299 @@
+/* ~ general style */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0062d3;
+  --primary-color-opacity: #cde1f8;
+  --white-color: #ffffff;
+  --gray-color: #f5f5f5;
+  --section-color: #1d6ac5;
+  --padding-section: 50px;
+  --main-duration: 300ms;
+  --black-color: #181818;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+body {
+  background-color: var(--gray-color);
+  font-family: "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+span,
+a {
+  display: inline-block;
+}
+
+.container {
+  width: 88%;
+  padding-inline: 10px;
+  margin-inline: auto;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--gray-color);
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #636363;
+  border-radius: 5px;
+}
+
+.section {
+  padding-block: var(--padding-section);
+}
+/* ^ navbar */
+/*.navbar {
+  background-color: var(--black-color);
+}*/
+.navbar-nav .nav-link {
+  position: relative;
+  padding-inline: 0 !important;
+  margin-inline: 15px;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--white-color);
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--white-color);
+}
+.navbar-nav .nav-link.active {
+  color: var(--white-color);
+}
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+/* ^ Header Section */
+section.header-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+section.header-section h1.title {
+  font-size: 4.5rem;
+}
+section.header-section p.subtitle {
+  font-size: 2.5rem;
+}
+/* ^about section*/
+.progress {
+  background-color: var(--primary-color-opacity);
+}
+.about-title::after {
+  content: "";
+  width: 18%;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+.about-title {
+  position: relative;
+}
+.services-title {
+  font-size: 3rem;
+}
+.line {
+  width: 40px;
+  height: 5px;
+  background-color: #0078ff;
+  margin: 0 auto;
+}
+/*services section*/
+.circle-icon {
+  width: 100px;
+  height: 100px;
+  border-color: var(--primary-color);
+  border-width: 10px;
+  border-style: solid;
+  transition: all 0.5s ease-in-out;
+}
+.service-box:hover .circle-icon {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color-opacity);
+}
+/* ^ counter section */
+.counter {
+  background-image: linear-gradient(#0077ff9a, #0077ff9a),
+    url("../images/counters-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding-block: 120px;
+}
+.counter .counter-box .counter-icon {
+  width: 80px;
+  height: 80px;
+  border-color: var(--primary-color-opacity);
+  border-width: 10px;
+  border-style: solid;
+}
+/*portfolio section*/
+.card .img-card {
+  overflow: hidden;
+}
+img.card-img-top {
+  transition: transform 0.5s ease-in-out;
+}
+img.card-img-top:hover {
+  transform: scale(1.3);
+}
+/* ^ Carousel Section */
+.carousel-section {
+  background-image: linear-gradient(#0077ff9a, #0077ff9a),
+    url("../images/overlay-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* .carousel-section .carousel-inner img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+} */
+.carousel-section {
+  padding-block: 120px;
+}
+.carousel-section .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+}
+.carousel-section .carousel-indicators button.active {
+  background-color: var(--white-color);
+}
+/* ^ Blog Section */
+.card-text h5 {
+  transition: color 0.3s ease-in-out;
+}
+.card-text h5:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.card-footer a img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.card-footer .name-author {
+  transition: color 0.3s ease-in-out;
+}
+.card-footer .name-author:hover {
+  color: var(--primary-color);
+}
+.card-category-box .card-category {
+  width: fit-content;
+}
+.card-category-box {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.card-category-box .card-category .category {
+  font-size: 12px;
+}
+/* ^ contact section */
+.contact-section {
+  background-image: linear-gradient(#0077ff9a, #0077ff9a),
+    url("../images/overlay-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.btn-form button {
+  transition: all 0.4s ease-in-out;
+}
+.btn-form button:hover {
+  background-color: var(--section-color);
+  border: 5px solid var(--primary-color-opacity);
+  filter: brightness(1.1);
+}
+.contact-section h5::after {
+  content: "";
+  width: 18%;
+  height: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+.contact-section h5 {
+  position: relative;
+}
+.socials .ico-circle {
+  width: 45px;
+  height: 45px;
+  border-color: var(--primary-color);
+  border-width: 3.5px;
+  border-style: solid;
+  transition: all 0.5s ease-in-out;
+}
+.socials .ico-circle:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color-opacity);
+}
+/* ^ footer section */
+footer.footer-section {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding-block: 25px;
+}
