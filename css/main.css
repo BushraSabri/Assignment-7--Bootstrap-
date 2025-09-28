@@ -121,9 +121,6 @@ a {
   content: "";
   width: 80%;
 }
-.navbar-nav .nav-link:hover {
-  width: 80%;
-}
 /* ^ Header Section */
 section.header-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
