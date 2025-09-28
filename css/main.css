@@ -106,6 +106,7 @@ a {
   position: absolute;
   left: 0;
   bottom: 4px;
+  transition: all 0.4s ease-in-out;
 }
 .navbar .nav-link,
 .navbar .navbar-brand {
@@ -114,16 +115,22 @@ a {
 .navbar-nav .nav-link.active {
   color: var(--white-color);
 }
+
+.navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
+  content: "";
   width: 80%;
 }
-
+.navbar-nav .nav-link:hover {
+  width: 80%;
+}
 /* ^ Header Section */
 section.header-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/hero-bg.jpg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 section.header-section h1.title {
   font-size: 4.5rem;
