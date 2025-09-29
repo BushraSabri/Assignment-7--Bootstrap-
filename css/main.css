@@ -93,6 +93,10 @@ a {
 /*.navbar {
   background-color: var(--black-color);
 }*/
+body:not(:has(a[href="#home"].active)) .navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease-in-out;
+}
 .navbar-nav .nav-link {
   position: relative;
   padding-inline: 0 !important;
